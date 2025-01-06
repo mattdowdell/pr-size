@@ -9,8 +9,7 @@ branding:
 
 inputs:
   xs-threshold:
-    description:
-      "The maximum number of lines changed for an extra small label to be assigned."
+    description: "The maximum number of lines changed for an extra small label to be assigned."
     required: false
     default: "10"
   s-threshold:
@@ -65,6 +64,12 @@ inputs:
     description: The token to use for managing labels.
     required: false
     default: ${{ github.token }}
+  ignore-whitespace:
+    description:
+      "Whether to ignore whitespace changes at the end of a line. Set to 'true' to enable, or
+      'false' to disable."
+    required: false
+    default: "true"
 
 outputs:
   label:
@@ -104,3 +109,4 @@ runs:
         xl_label: ${{ inputs.xl-label }}
         xxl_label: ${{ inputs.xxl-label }}
         color: ${{ inputs.color }}
+        ignore_whitespace: ${{ inputs.ignore-whitespace }}

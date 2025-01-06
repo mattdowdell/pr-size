@@ -33,6 +33,8 @@ jobs:
       - name: Size
         id: size
         uses: ./
+        with:
+          ignore-whitespace: false
 
       - name: Output
         run: |
